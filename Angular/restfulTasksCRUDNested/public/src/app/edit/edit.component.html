@@ -1,0 +1,8 @@
+<span style="font-weight: bold">This is a nested component</span>
+<h3>Edit User</h3>
+{{singleUser | json }}
+<form (submit)="callParent()">
+    <input type="text" [(ngModel)]="editSingleUser.name" name="editSingleUser.name" placeholder="name" required>
+    <input type="number" [(ngModel)]="editSingleUser.age" name="editSingleUser.age" placeholder="age" required>
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,32 @@
+<div *ngIf="Restaurant" class="content">
+  <h2>Review {{Restaurant['name']}}</h2>
+  
+  <form *ngIf="newRating" (submit)="rate(Restaurant)">
+    
+    <div class="flexxx">
+      <h6 *ngIf="errName">{{errName}}</h6>
+      <span>Reviewer Name:</span>
+      <input type="text" [(ngModel)]="newRating.name" name="newRating.name">
+    </div>
+    <div class="flexxx">
+      <h6 *ngIf="errRate">{{errRate}}</h6>
+      <span>Stars:</span>
+      <select [(ngModel)]="newRating.rating" name="newRating.rating"><br>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="flexxx">
+      <h6 *ngIf="errRev">{{errRev}}</h6>
+      <span>Review:</span><br>
+      <textarea [(ngModel)]="newRating.review" name="newRating.review" placeholder="Add Your Review" cols="30" rows="5"></textarea><br>
+    </div>
+    <div class="justify">
+      <button class="submit" type="submit">Review</button>
+      <button class="cancel" [routerLink]="['/restaurants', Restaurant['id']]">Cancel</button>
+    </div>
+  </form>
+</div>

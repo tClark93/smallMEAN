@@ -1,0 +1,63 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    margin: 25px;
+}
+.board{
+    margin-left:10%;
+    margin-right: 10%;
+}
+.name{
+    margin: 25px;
+    width: 30%;
+}
+.name input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #c7c7c7;
+}
+.post{
+    margin-left: 25px;
+    width: 90%;
+}
+.post textarea{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #c7c7c7;
+}
+.leftify{
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+.postButton{
+    margin: 10px;
+    padding: 10px;
+    font-size: 12pt;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+.wall{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.half{
+    display: flex;
+    justify-content: space-around;
+}
+span{
+    font-weight: bold;
+}
+.messageDiv{
+    font-size: 10pt;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}

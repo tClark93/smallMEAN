@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "wrapper">
+        <h1>Conversation Board</h1>
+        <div class="chat">
+
+        </div>
+        <div class="submit">
+            <form id="form">
+                <input class="entry" type="text" placeholder="message">
+                <div class="justify">
+                    <button type = "submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+$(document).ready(function (){
+    
+    var socket = io(); //1
+            
+    var name = prompt("Please enter your name")
+
+    if(name != null){
+        socket.emit('user', name)
+    }
+            
+
+    $('#form').submit(function(event){
+        console.log($('.entry').val())
+        event.preventDefault();    
+        socket.emit('form',{name: name, message: $('.entry').val()})
+        $('.entry').val("")
+    })
+
+    socket.on('displayPrev', function (data) {
+        console.log(data.messages)
+        for(let message in data.messages){
+            $(".chat").append("<p><span style='font-weight: bold'>"+data.messages[message].name+"</span>: "+data.messages[message].message+"</p>")
+        }
+    });
+
+    socket.on('new', function (data) {
+        console.log(data.name)
+        $(".chat").append("<p><span style='font-weight: bold'>"+data.name+"</span>: "+data.message+"</p>")
+    
+    });
+
+})
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+<div class="content">
+  <h1>Create a new Product</h1>
+  <form (submit)="create()">
+    <div class="flexxx">
+      <h6 *ngIf="errorName" style="color:red">{{errorName}}</h6>
+      <span>Product Name:</span>
+      <input type="text" [(ngModel)]="newProduct.name" name="newProduct.name">
+    </div>
+    <div class="flexxx">
+        <h6 *ngIf="errorPrice" style="color:red">{{errorPrice}}</h6>
+      <span>Product Price:</span>
+      <input type="number" [(ngModel)]="newProduct.price" name="newProduct.price">
+    </div>
+    <div class="flexxx">
+      <span>Image URL:</span>
+      <input type="text" [(ngModel)]="newProduct.image" name="newProduct.image">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+

@@ -1,0 +1,21 @@
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Cuisine</th> 
+      <th>Available Actions</th>
+    </tr>
+    <tr *ngFor="let restaurant of restaurants">
+      <!-- <td>{{restaurant['name']}}</td> -->
+      <td>{{restaurant['name']}}</td>
+      <td>{{restaurant['cuisine']}}</td> 
+      <td >
+        <div class="flex">
+          <button [routerLink]="['/restaurants', restaurant['_id']]" class="read">Read Reviews</button>
+          <button [routerLink]="['/edit', restaurant['_id']]" class="edit">Update</button>
+          <div *ngIf="(restaurant['createdAt'] | date:'yyyyMMddHHmmss') > (now | date:'yyyyMMddHHmmss')">
+            <button (click)="delete(restaurant['_id'])" class="delete">Delete</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>

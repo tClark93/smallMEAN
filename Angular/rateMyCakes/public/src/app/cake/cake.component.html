@@ -1,0 +1,13 @@
+<div style="display:flex; justify-content: space-around; margin: 25px; padding: 25px;">
+    <div>
+        <img src="{{viewSingleCake['image']}}" alt="this is a cake" style="max-height: 300px; max-width: 400px;">
+    </div>
+  <div>
+    <h2>{{viewSingleCake['baker']}}'s {{viewSingleCake['cake']}}</h2>
+    <h4>Stars: {{viewSingleCake['avg']}}</h4>
+    <div *ngFor="let comment of viewSingleCake['stars']">
+      <h6>{{comment['rating']}}/5</h6>
+      <p>{{comment['content']}}</p>
+    </div>
+  </div>
+</div>

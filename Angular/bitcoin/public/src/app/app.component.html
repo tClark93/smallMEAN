@@ -1,0 +1,15 @@
+<div class="header" style="text-align:center; font-family: Arial, Helvetica, sans-serif">
+  <h1>
+    Welcome to Bitcoin Exchange
+  </h1>
+</div>
+<div class="buttons">
+    <button [routerLink]="['/alpha']">Home</button>
+    <button [routerLink]="['/mine']">Mine Coins</button>
+    <button [routerLink]="['/buy']">Buy Coins</button>
+    <button [routerLink]="['/sell']">Sell Coins</button>
+    <button [routerLink]="['/browse']">Browse Ledger</button>
+</div>
+<div class="text">
+  <router-outlet></router-outlet>  
+</div>

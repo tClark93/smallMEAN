@@ -1,0 +1,11 @@
+.all{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center
+}
+h1{
+    margin: 25px;
+}
+p{
+    margin-left: 20%;
+    margin-right: 20%;
+}

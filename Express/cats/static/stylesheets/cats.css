@@ -1,0 +1,20 @@
+body{
+    background-color: palevioletred
+}
+h1{
+    font-family: 'Comic Sans ms';
+    font-size: 100pt;
+    color: white;
+    margin: 100px;
+    text-align: center;
+}
+.photos{
+    margin-top:100px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+img{
+    max-height: 90%;
+    max-width: 100%;
+}

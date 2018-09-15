@@ -1,0 +1,16 @@
+<div class="content">
+    <h1>Add a new Restaurant</h1>
+    <form (submit)="create()">
+      <div class="flexxx">
+        <h6 *ngIf="errName">{{errName}}</h6>
+        <span>Restaurant Name:</span>
+        <input type="text" [(ngModel)]="newRestaurant.name" name="newRestaurant.name">
+      </div>
+      <div class="flexxx">
+        <h6 *ngIf="errCuis">{{errCuis}}</h6>
+        <span>Cuisine:</span>
+        <input type="text" [(ngModel)]="newRestaurant.cuisine" name="newRestaurant.cuisine">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>

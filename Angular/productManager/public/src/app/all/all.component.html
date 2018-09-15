@@ -1,0 +1,13 @@
+<div *ngFor="let product of products" class = "product">
+  <div class="flex">
+    <div class="text">
+      <h3>{{product['name']}}</h3>
+      <p>Price: {{product['price']}}</p>
+      <div class="buttons">
+        <button [routerLink]="['/edit', product['_id']]" class="edit">Edit</button>
+        <button (click)="delete(product['_id'])" class="delete">Delete</button>
+      </div>
+    </div>
+    <img src="{{product['image']}}" alt="image of {{product['name']}}">
+  </div>
+</div>

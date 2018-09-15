@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>The button has been pushed <span id="number">0</span> times!</h1>
+        <div class="hold">
+            <div class="buttons">
+                <h3>Push the epic button to update the count</h3>
+                <form id="epic">
+                    <button class="epic">I'm the Epic Button</button>
+                </form>
+                <form id="reset">
+                    <button class="reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function (){
+
+        var socket = io(); //1
+         
+        $('#epic').submit(function(event){
+            event.preventDefault();    
+        socket.emit('submit')
+
+    })
+        $('#reset').submit(function(event){
+            event.preventDefault();    
+        socket.emit('clear',{form:count=0})
+        })
+    socket.on('return', function (data) { //4
+        console.log(data.count)
+        $("#number").replaceWith(`<span id="number">${data.count}<span>`)
+        });
+    })
+</script>
+</html>

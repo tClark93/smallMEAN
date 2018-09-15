@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1 class='title'>
+    {{ title }}!
+  </h1>
+</div>
+<div class="main">
+  <div class="right">
+    <h2>Add your Cake!</h2>
+    <form (submit)="create()">
+      <input type="text" [(ngModel)]="newCake.baker" name="newCake.baker" placeholder="Baker's Name" required><br>
+      <input type="text" [(ngModel)]="newCake.cake" name="newCake.cake" placeholder="Cake" required><br>
+      <textarea [(ngModel)]="newCake.description" name="newCake.description" placeholder="Description" cols="20" rows="10"></textarea><br>
+      <input type="text" [(ngModel)]="newCake.image" name="newCake.image" placeholder="Image URL" required><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class='left'>
+      <div clas="holder" *ngFor="let cake of cakes">
+        <div class="individual">
+          <div class="two">
+              <img (click)="fullView(cake)" src="{{cake['image']}}" alt="this is a cake">
+          </div>
+          <div class="one">
+            <form (submit)="rate(cake)">
+                <select [(ngModel)]="newRating.rating" name="newRating.rating"><br>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <textarea [(ngModel)]="newRating.content" name="newRating.comtemt" placeholder="Add Your Review" cols="30" rows="5"></textarea><br>
+                <button type="submit">Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div *ngIf="edit" class="edit">
+    <app-cake [viewSingleCake] = 'singleCake' (myEvent)="invoke()"></app-cake>
+</div>
+
+

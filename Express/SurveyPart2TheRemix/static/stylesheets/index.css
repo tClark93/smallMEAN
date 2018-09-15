@@ -1,0 +1,29 @@
+.success{
+    background-color: rgb(214, 233, 196);
+    border: 1px green solid;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    padding: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form{
+    margin-top: 50px;
+    border: 1px solid gray;
+    padding: 100px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+label{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.success span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+}

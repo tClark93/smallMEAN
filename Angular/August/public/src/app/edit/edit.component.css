@@ -1,0 +1,31 @@
+.content{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+h1{
+    text-align: center;
+    margin: 50px;
+}
+.flexxx{
+    margin: 5px;
+}
+.flexxx input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+}
+h6{
+    margin: 5px;
+    color: red;
+}
+button{
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}

@@ -1,0 +1,39 @@
+.product{
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 25px;
+    margin-top: 25px;
+}
+img{
+    max-height: 200px;
+    max-width: 200px;
+}
+.flex{
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: space-between
+}
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5%;
+    width: 200px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1opt;
+}
+.edit{
+    border: 1px solid blue;
+    color: blue;
+}
+.delete{
+    border: 1px solid red;
+     color: red;
+}

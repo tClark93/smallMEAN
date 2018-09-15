@@ -1,0 +1,9 @@
+.photos{
+    height: 300px;
+    display: flex;
+    justify-content: space-between
+}
+img{
+    max-height: 90%;
+    width: auto;
+}

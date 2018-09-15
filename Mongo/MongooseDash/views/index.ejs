@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styleIndex.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>¡Seals!</title>
+</head>
+<body>
+    <h1>Look at these Seals</h1>
+    <div class="contain">
+    <%if(seals) {%>
+        <%for (var x of seals) {%>
+            <div class="hold">
+                <h2><%= x.name %></h2>
+                <!-- <p>Age: <%= x.age %></p>
+                <p>Weight: <%= x.weight %></p>
+                <p>Color: <%= x.color %></p>
+                <p><%= x.info %></p> -->
+                <div class="links">
+                    <a href="/seals/<%= x.id %>">About</a>
+                    <a href="/seals/edit/<%= x.id %>">Edit</a>
+                    <a href="/seals/destroy/<%= x.id %>">Delete</a>
+                </div>
+            </div>
+            <!-- <p>- <%= x.name%>  <%= x.createdAt.toLocaleTimeString('en-us', { hour: '2-digit', minute: '2-digit', month: 'long', day: '2-digit', year: 'numeric' })%></p> -->
+        <%}%>
+    <%}%>
+    </div>
+    <div class="center">
+        <a class="button" href="/seals/new">Add a Seal</a>
+    </div>
+</body>
+</html>

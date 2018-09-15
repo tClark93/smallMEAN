@@ -1,0 +1,16 @@
+<div class="content">
+    <h1>Edit Restaurant</h1>
+    <form (submit)="edit()">
+      <div class="flexxx">
+        <h6 *ngIf="errName">{{errName}}</h6>
+        <span>Restaurant Name:</span>
+        <input type="text" [(ngModel)]="editRestaurant.name" name="editRestaurant.name">
+      </div>
+      <div class="flexxx">
+          <h6 *ngIf="errCuis">{{errCuis}}</h6>
+        <span>Cuisine:</span>
+        <input type="text" [(ngModel)]="editRestaurant.cuisine" name="editRestaurant.cuisine">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>

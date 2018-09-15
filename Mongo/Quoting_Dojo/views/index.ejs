@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <div>
+                <h1>Welcome to Quoting Dojo!</h1>
+                <form action="/create" method="post">
+                    <table>
+                        <!-- tip to easily see objects printed in full instead of [object Object] -->
+                        <!-- <%- JSON.stringify(messages) %>  -->
+                        <!-- based on the structure of your messages, determine how to display them -->
+                        <% if(messages.registration) { %>
+                            <% for (var x of messages.registration) { %>
+                                <h3><%= x %></h3>
+                            <% } %>
+                        <% } %>
+                        <tr>
+                            <td>Your Name:</td>
+                            <td><input name="name" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Your Quote:</td>
+                            <td><textarea name="quote"cols="30" rows="10"></textarea> </td>
+                        </tr>
+                    </table>
+                    <div class="space">
+                        <button type="submit" class="button">Add Quote</button>
+                        <a href="/quotes" class="button">Skip to Quotes</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

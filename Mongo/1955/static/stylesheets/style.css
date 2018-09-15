@@ -1,0 +1,33 @@
+.wrapper{
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+.left, .right{
+    width: 300px;
+}
+input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.control{
+    margin: 15px;
+}
+button{
+    margin: 10px;
+    padding: 5px;
+    font-size: 10pt;
+    border-radius: 5px;
+}

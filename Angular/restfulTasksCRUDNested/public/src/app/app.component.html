@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1 class = "intro">
+    Welcome to {{ title }}!
+  </h1>
+  
+</div>
+<div *ngIf="a" class="a">
+  <button (click)="showOptions()" class="blue">Show All Users</button>
+</div>
+<div *ngIf="all" class="all">
+  <div class="left">
+    <h1>All Users</h1>
+    <div class="allUsers">
+        <div *ngFor="let user of users">
+          <div class = "userDiv">
+            <h3>{{user['name']}}</h3>
+            <p>Age: {{user['age']}}</p>
+            <p>Joined: {{user['createdAt'] | date : "EEEE, MMMM d, y"}}</p>
+            <div class="buttonDiv">
+              <button (click)="openEdit(user)" style="background-color: blue">Edit</button>
+              <button (click)="delete(user['_id'])" style="background-color: red">Delete</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="create">
+      <h3>Create User</h3>
+      <form (submit)="create()">
+          <input type="text" [(ngModel)]="newUser.name" name="newUser.name" placeholder="name" required>
+          <input type="number" [(ngModel)]="newUser.age" name="newUser.age" placeholder="age" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="edit" class="edit">
+      <!-- <h3>Edit User</h3>
+      <form (submit)="editUser()">
+          <input type="text" [(ngModel)]="singleUser.name" name="singleUser.name" placeholder="name" required>
+          <input type="number" [(ngModel)]="singleUser.age" name="singleUser.age" placeholder="age" required>
+        <button type="submit">Submit</button>
+      </form> -->
+    </div>
+    <div *ngIf="edit" class="edit">
+        <app-edit [editSingleUser] = 'singleUser' (myEvent)="invoke()"></app-edit>
+        <app-edit [editSingleUser] = 'singleUser' (myEvent)="invoke()"></app-edit>
+    </div>
+  </div>
+</div>
+
+
+

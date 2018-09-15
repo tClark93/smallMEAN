@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body id="all">
+    <div class="wrapper">
+        <form id="green">
+            <button class="green" type="submit">Green</button>
+        </form>
+        <form id="blue">
+            <button class="blue" type="submit">Blue</button>
+        </form>
+        <form id="pink">
+            <button class="pink" type="submit">Pink</button>
+        </form>
+    </div>
+</body>
+<script>
+        $(document).ready(function (){
+    
+            var socket = io(); //1
+             
+            $('#green').submit(function(event){
+                event.preventDefault();    
+            socket.emit('green')
+            })
+
+            $('#blue').submit(function(event){
+                event.preventDefault();    
+            socket.emit('blue')
+            })
+
+            $('#pink').submit(function(event){
+                event.preventDefault();    
+            socket.emit('pink')
+            })
+
+        socket.on('return', function (data) { //4
+            console.log(data.color)
+            $("#all").css("background-color",data.color)
+            });
+        })
+</script>
+</html>

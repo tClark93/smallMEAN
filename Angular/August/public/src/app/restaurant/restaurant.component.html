@@ -1,0 +1,18 @@
+<div *ngIf="Restaurant" class="head">
+  <h1>{{Restaurant['name']}}</h1>
+  <h3>{{Restaurant['cuisine']}} Restaurant</h3>
+</div>
+<div class="justify">
+    <button [routerLink]="['comment']" class="read">Write Review</button>
+</div>
+<!-- <div *ngIf="Restaurant"> -->
+  {{ var count = 0}}
+<div *ngFor="let review of Restaurant['reviews'] | orderBy : 'rating' : true;" class="review">
+  <!-- {{review | orderBy: review.rating}} -->
+  
+  <h5>{{review['name']}}</h5>
+  <h5>{{review['rating']}} Stars</h5>
+  <p>{{review['review']}}</p>
+</div>
+<!-- </div> -->
+

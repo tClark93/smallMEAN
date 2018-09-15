@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Counter</h1>
+        <h4>Count: <%= counter %></h4>
+        <div class="buttons">
+            <form action ="/add" method="POST">
+                <button type="submit">Add 2</button>
+            </form>
+            <form action="/reset" method="POST">
+                <button type="submit">Reset</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

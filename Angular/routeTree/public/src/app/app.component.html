@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div style="display: flex; justify-content: space-between; margin-left: 30%; margin-right: 30%;">
+    <button [routerLink]="['/products']">Products</button>
+    <button [routerLink]="['/reviews']">Authors</button>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

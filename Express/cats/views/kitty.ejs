@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/kitty.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= cat.name %></h1>
+    <div class="photos">
+        <img src= <%= cat.img %> alt="a cat">
+    </div>
+    <div class="words">
+        <h2>Favorite Food:</h2>
+        <h3><%= cat.favfood %></h3>
+        <h2>Age:</h2>
+        <h3><%= cat.age %></h3>
+        <h2>Favorite Sleeping Spots:</h2>
+        <% for (var x = 0; x < cat.spots.length; x++) { %>
+            <h3><%= cat.spots[x] %></h3>
+        <% } %>
+    </div>
+</body>
+</html>

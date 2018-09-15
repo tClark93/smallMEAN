@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(181, 205, 250)
+}
+h1{
+    font-family: 'Comic Sans ms';
+    font-size: 50pt;
+    color: white;
+    margin: 50px;
+    text-align: center;
+}
+.photos{
+    margin-top:50px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+img{
+    max-height: 90%;
+    max-width: 100%;
+}
+.words{
+    margin-left:200px;
+}
+h2, h3{
+    font-family: 'Comic Sans ms';
+    color: white
+}
+h3{
+    margin-left: 25px;
+}

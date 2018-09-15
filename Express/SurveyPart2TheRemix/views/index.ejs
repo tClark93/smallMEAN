@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="success"></div>
+    <div class="form">
+        <form id="form">
+
+            <label>Your Name</label><br>
+            <input type="text" id="name">
+            <br><br>
+
+            <label for="location">Dojo Location</label><br>
+            <select class="location">
+                <option value="Chicago">Chicago</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Tulsa">Tulsa</option>
+            </select>
+            <br><br>
+
+            <label for="language">Favorite Language</label><br>
+            <select class="language">
+                <option value="Python">Python</option>
+                <option value="C">C#</option>
+                <option value="MEAN">MEAN</option>
+            </select>
+            <br><br>
+
+            <label for="comments">Additional Comments:</label><br>
+            <textarea class="comments" id="comments" cols="30" rows="10"></textarea>
+            <br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    $(document).ready(function (){
+        
+    var socket = io(); //1
+    $('#form').submit(function(event){
+        event.preventDefault();
+        var name = $('#name').val()
+        var location = $('.location').val()
+        var language = $('.language').val()
+        var comments = $('.comments').val()
+        var form = {
+            name:name,
+            location:location,
+            language: language,
+            comments: comments
+        }
+        socket.emit('submit',{form:form})
+    })
+    socket.on('return', function (data) { //4
+        console.log(data.return.rand)
+        $(".form").replaceWith(`<div class="success"><p>You emitted the following information to the server: <br>
+            <br><br><br>
+        Name: ${data.return.name},<br>
+        Location: ${data.return.location},<br>
+        Language: ${data.return.language},<br>
+        Comments: ${data.return.comments},<br><br><br>
+        and your lucky number is...</p>
+        <br><br><br><br>
+        <span>${data.return.rand}<span><br>
+        </div>`)
+        });
+    })
+    </script>
+</html>

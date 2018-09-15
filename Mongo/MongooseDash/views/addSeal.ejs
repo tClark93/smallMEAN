@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <title>Add</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <div>
+                <h1>Add a Seal</h1>
+                <form action="/create" method="post">
+                    <table>
+                        <% if(messages.registration) { %>
+                            <% for (var x of messages.registration) { %>
+                                <h3><%= x %></h3>
+                            <% } %>
+                        <% } %>
+                        <tr>
+                            <td>Name:</td>
+                            <td><input name="name" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Age:</td>
+                            <td><input name="age" type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Weight:</td>
+                            <td><input name="weight" type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Color:</td>
+                            <td><input name="color" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Additional Information:</td>
+                            <td><textarea name="info"cols="30" rows="10"></textarea> </td>
+                        </tr>
+                    </table>
+                    <div class="space">
+                        <a href="/" class="button">Back to All Seals</a>
+                        <button type="submit" class="button">Add Seal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

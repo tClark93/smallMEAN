@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    margin: 50px;
+    font-size: 50pt;
+    text-align: center;
+}
+span{
+    font-weight: bold;
+}
+.info{
+    margin-top: 25px;
+    margin-left: 35%;
+    margin-right:35%;
+    font-size: 16pt;
+}
+.button{
+    font-size: 12pt;
+    margin: 40px;
+    padding: 15px;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+    background-color: #1a1a1a;
+    display: inline-block;
+    vertical-align: bottom;
+}

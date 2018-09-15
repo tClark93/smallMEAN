@@ -1,0 +1,27 @@
+.head{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 25px;
+}
+.justify{
+    display: flex;
+    justify-content: center;
+}
+button{
+    background-color: white;
+    border: 1px solid purple;
+    color: purple;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+.review{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #eeeeee;
+}
+.review h5{
+    text-align: center;
+}

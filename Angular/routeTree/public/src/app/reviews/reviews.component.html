@@ -1,0 +1,11 @@
+<p>
+  reviews works!
+</p>
+<div style="display: flex; justify-content: space-between; margin-left: 30%; margin-right: 30%;">
+    <button [routerLink]="['details/:id']">Details</button>
+    <button [routerLink]="['author/:id']">Authors</button>
+    <button [routerLink]="['all/:id']">All</button>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
